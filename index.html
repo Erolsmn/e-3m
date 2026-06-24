@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Sana özel hazırlanmış romantik sürpriz" />
+  <meta name="theme-color" content="#0a0a0f" />
+  <title>💖</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;600&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="intro-overlay">
+        <div id="intro-text"></div>
+    </div>
+
+  <div id="background-effects"></div>
+  <div class="wrap">
+    <div class="glass">
+      <div class="floaters" id="floaters" aria-hidden="true"></div>
+      <div class="top">
+        <div class="badge" role="status" aria-live="polite">
+          <span class="dot" aria-hidden="true"></span> 
+          Doğum Günün Kutlu Olsun Aşkım Seni Çooooook Seviyorum
+        </div>
+      </div>
+
+      <div class="stage" id="stage">
+
+        <div class="tapLayer" id="tapLayer" role="button" tabindex="0" aria-label="Deneyimi başlatmak için tıklayın">
+          <div class="cta">
+            <h1>Ekrana tıkla ✨</h1>
+          </div>
+        </div>
+
+        <div class="giftWrap" id="giftWrap">
+          <div class="simple-gift" id="gift" role="button" tabindex="0" aria-label="Hediye kutusunu açmak için tıklayın">
+            🎁
+          </div>
+          <div class="giftLabel" id="giftLabel" aria-live="polite">
+            Kutuyu açmak için tıklaaaaaaaaa 🎁
+          </div>
+        </div>
+
+        <div class="love-photo-container" id="lovePhotoContainer">
+          <img src="love_photo.png" alt="Love">
+        </div>
+
+        <div class="petals" id="petals"></div>
+
+        <div class="names" id="names">
+          <div class="card">
+            <h2><span id="name1">Erol</span><span class="heart">❤</span><span id="name2">Merve</span></h2>
+            <div class="sub">Seni çok seviyorum 💘</div>
+          </div>
+        </div>
+
+
+
+
+
+        <div class="music-player" id="musicPlayer" role="region" aria-label="Müzik çalar">
+          <div class="disk" aria-hidden="true">
+            <div class="disk-center">♪</div>
+          </div>
+          <div class="song-info">
+            <div class="song-title">Dilerim Ki</div>
+            <div class="song-artist">Dolu Kadehi Ters Tut</div>
+          </div>
+          <div class="controls">
+            <button class="control-btn" id="playPauseBtn" aria-label="Oynat/Duraklat">▶</button>
+          </div>
+          <audio id="bg-music" loop>
+             <source src="ssstik.io_1782332645042.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+
+        <div class="ticker" id="ticker" role="timer" aria-label="Birlikte geçirilen süre">
+          <div class="ticker__track">
+            <div class="timer-title-main">Seninle Geçen Zamana Bak...</div>
+            <div class="ticker__cards">
+              <div class="timer-item">
+                <div class="timer-val" id="t-days" aria-label="Gün">00</div>
+                <div class="timer-label">GÜN</div>
+              </div>
+              <div class="timer-item">
+                <div class="timer-val" id="t-hours" aria-label="Saat">00</div>
+                <div class="timer-label">SAAT</div>
+              </div>
+              <div class="timer-item">
+                <div class="timer-val" id="t-minutes" aria-label="Dakika">00</div>
+                <div class="timer-label">DAKİKA</div>
+              </div>
+              <div class="timer-item">
+                <div class="timer-val" id="t-seconds" aria-label="Saniye">00</div>
+                <div class="timer-label">SANİYE</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        
+        <div class="love-reasons" id="loveReasons">
+           <div id="reasonDisplay" class="reason-display"></div>
+           <button id="reasonBtn" class="reason-btn">Senin... 👆</button>
+        </div>
+      <div class="footer"></div>
+    </div>
+
+
+    <div class="password-modal" id="passwordModal" role="dialog" aria-modal="true" aria-hidden="true">
+      <div class="modal-content">
+        <h2>Şifre Gerekli 🔒</h2>
+        <p>Kutuyu açmak için şifreyi gir:</p>
+        <div class="input-group">
+          <input type="password" id="passwordInput" placeholder="Şifre" maxlength="8" autocomplete="off">
+          <button id="submitPasswordBtn">Aç 💖</button>
+        </div>
+        <p class="error-msg" id="passwordError">Yanlış şifre! İpucu: Sevgili olma tarihi? 😉</p>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+  <script src="script.js"></script>
+</body>
+</html>

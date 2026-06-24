@@ -268,12 +268,21 @@
       border-top: 1px solid rgba(255, 215, 0, 0.2);
       backdrop-filter: blur(10px);
       overflow:hidden;
+      display: none;
       opacity:0; transform: translateY(20px);
-      transition: opacity .6s ease, transform .6s ease;
       z-index:8; pointer-events:none;
       box-shadow: none; 
     }
-    .ticker.show{ opacity:1; transform: translateY(0); }
+    .ticker.show{
+      display: block;
+      animation: fadeInTranslate 0.6s forwards;
+      pointer-events: auto;
+    }
+
+    @keyframes fadeInTranslate {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
     
     .ticker__track{
       display:flex; flex-direction: column;
@@ -351,20 +360,20 @@
       padding: 15px 20px;
       border-radius: 20px;
       box-shadow: 0 15px 40px rgba(0,0,0,0.4);
-      display: flex; 
+      display: none; 
       flex-direction: row;
       align-items: center; 
       justify-content: space-between;
       gap: 15px;
       z-index: 7;
       opacity: 0; pointer-events: none;
-      transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
       border: 1px solid rgba(255, 215, 0, 0.3);
       backdrop-filter: blur(15px);
     }
     .music-player.show{
-      opacity: 1; pointer-events: auto;
-      transform: scale(1);
+      display: flex;
+      animation: fadeInScale 0.6s forwards;
+      pointer-events: auto;
     }
     
     .disk{
@@ -556,12 +565,14 @@
     }
     
     .input-group {
-      display: flex; gap: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
       margin-bottom: 20px;
     }
     
     #passwordInput {
-      flex: 1;
+      width: 100%;
       background: rgba(255,255,255,0.05);
       border: 1px solid rgba(255,255,255,0.1);
       border-radius: 12px;
@@ -584,11 +595,12 @@
       background: var(--pink);
       color: #000; 
       border: none;
-      padding: 0 20px;
+      padding: 12px 20px;
       border-radius: 12px;
       font-weight: 700;
       font-size: 16px;
       transition: all 0.2s ease;
+      width: 100%;
     }
     #submitPasswordBtn:hover {
       transform: scale(1.05);
@@ -769,21 +781,25 @@
 .love-photo-container {
   width: clamp(200px, 40vh, 300px);
   height: clamp(200px, 40vh, 300px);
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   position: relative;
   opacity: 0;
   transform: scale(0.95);
-  transition: opacity 0.5s ease, transform 0.5s ease;
   pointer-events: none;
   z-index: 3;
 }
 
 .love-photo-container.show {
-  opacity: 1;
-  transform: scale(1);
+  display: flex;
+  animation: fadeInScale 0.6s forwards;
   pointer-events: auto;
+}
+
+@keyframes fadeInScale {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
 }
 
 .love-photo-container img {
